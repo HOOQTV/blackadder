@@ -1,11 +1,14 @@
 {
   "name": "blackadder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Async flashheart",
   "main": "build/lib/index.js",
   "scripts": {
     "test": "gulp test"
   },
+  "files": [
+    "build/lib/index.js"
+  ],
   "author": "Dhi Aurrahman <dio@hooq.tv>",
   "license": "MIT",
   "babel": {
