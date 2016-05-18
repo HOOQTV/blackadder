@@ -19,7 +19,7 @@ const Blackadder = require('blackadder').default,
     client.get('http://hihi.com/haha.json')
         .then((res) => { console.log(res.body); console.log(res.response); })
         .catch((err)) => { console.log(err); });
-``
+```
 
 ## Credits
 - Copyright © 2016 HOOQ Digital Pte. Ltd. and project authors.
