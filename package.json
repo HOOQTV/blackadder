@@ -33,7 +33,9 @@
     "gulp-ava": "^0.11.0",
     "gulp-babel": "^6.1.2",
     "gulp-cached": "^1.1.0",
-    "gulp-concat-util": "^0.5.5"
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-util": "^0.5.5",
+    "gulp-sourcemaps": "^1.6.0"
   },
   "directories": {
     "test": "test"
