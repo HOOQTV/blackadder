@@ -114,11 +114,9 @@ var HttpClient = function () {
                             case 0:
                                 if (/x-www-form-urlencoded/.test(options.headers['Content-Type'])) {
                                     options.form = body;
-                                    options.json = this.options.json || false;
                                     body = null;
                                 } else if (/form-data/.test(options.headers['Content-Type'])) {
                                     options.formData = body;
-                                    options.json = this.options.json || false;
                                     body = null;
                                 }
                                 // this is the application/json
