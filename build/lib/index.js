@@ -107,7 +107,7 @@ var HttpClient = function () {
         value: function () {
             var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(method, url) {
                 var body = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-                var options = arguments.length <= 3 || arguments[3] === undefined ? { headers: {} } : arguments[3];
+                var options = arguments.length <= 3 || arguments[3] === undefined ? { headers: {}, json: true } : arguments[3];
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
                         switch (_context2.prev = _context2.next) {
