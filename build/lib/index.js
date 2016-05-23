@@ -142,6 +142,58 @@ var HttpClient = function () {
         }()
 
         /**
+         * Executes request
+         */
+
+    }, {
+        key: 'exec',
+        value: function () {
+            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee3(url) {
+                var body = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+                var query = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+                var options = arguments.length <= 3 || arguments[3] === undefined ? { headers: {}, json: true } : arguments[3];
+                var method = arguments.length <= 4 || arguments[4] === undefined ? 'get' : arguments[4];
+                return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                    while (1) {
+                        switch (_context3.prev = _context3.next) {
+                            case 0:
+                                method = method.toLowerCase();
+                                options.qs = query;
+
+                                if (!(['post', 'put'].indexOf(method) >= 0)) {
+                                    _context3.next = 6;
+                                    break;
+                                }
+
+                                _context3.next = 5;
+                                return this.withBody(method, url, body, options);
+
+                            case 5:
+                                return _context3.abrupt('return', _context3.sent);
+
+                            case 6:
+                                _context3.next = 8;
+                                return this.common(method, url, query, options);
+
+                            case 8:
+                                return _context3.abrupt('return', _context3.sent);
+
+                            case 9:
+                            case 'end':
+                                return _context3.stop();
+                        }
+                    }
+                }, _callee3, this);
+            }));
+
+            function exec(_x11, _x12, _x13, _x14, _x15) {
+                return ref.apply(this, arguments);
+            }
+
+            return exec;
+        }()
+
+        /**
          * GET
          * @param {String} url
          * @param {Object} query
@@ -151,29 +203,29 @@ var HttpClient = function () {
     }, {
         key: 'get',
         value: function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee3(url) {
+            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee4(url) {
                 var query = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
                 var options = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-                return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                return regeneratorRuntime.wrap(function _callee4$(_context4) {
                     while (1) {
-                        switch (_context3.prev = _context3.next) {
+                        switch (_context4.prev = _context4.next) {
                             case 0:
                                 options.qs = query;
-                                _context3.next = 3;
+                                _context4.next = 3;
                                 return this.common('get', url, null, options);
 
                             case 3:
-                                return _context3.abrupt('return', _context3.sent);
+                                return _context4.abrupt('return', _context4.sent);
 
                             case 4:
                             case 'end':
-                                return _context3.stop();
+                                return _context4.stop();
                         }
                     }
-                }, _callee3, this);
+                }, _callee4, this);
             }));
 
-            function get(_x11, _x12, _x13) {
+            function get(_x20, _x21, _x22) {
                 return ref.apply(this, arguments);
             }
 
@@ -190,26 +242,26 @@ var HttpClient = function () {
     }, {
         key: 'post',
         value: function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee4(url, body, options) {
-                return regeneratorRuntime.wrap(function _callee4$(_context4) {
+            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee5(url, body, options) {
+                return regeneratorRuntime.wrap(function _callee5$(_context5) {
                     while (1) {
-                        switch (_context4.prev = _context4.next) {
+                        switch (_context5.prev = _context5.next) {
                             case 0:
-                                _context4.next = 2;
+                                _context5.next = 2;
                                 return this.withBody('post', url, body, options);
 
                             case 2:
-                                return _context4.abrupt('return', _context4.sent);
+                                return _context5.abrupt('return', _context5.sent);
 
                             case 3:
                             case 'end':
-                                return _context4.stop();
+                                return _context5.stop();
                         }
                     }
-                }, _callee4, this);
+                }, _callee5, this);
             }));
 
-            function post(_x16, _x17, _x18) {
+            function post(_x25, _x26, _x27) {
                 return ref.apply(this, arguments);
             }
 
@@ -226,26 +278,26 @@ var HttpClient = function () {
     }, {
         key: 'put',
         value: function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee5(url, body, options) {
-                return regeneratorRuntime.wrap(function _callee5$(_context5) {
+            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee6(url, body, options) {
+                return regeneratorRuntime.wrap(function _callee6$(_context6) {
                     while (1) {
-                        switch (_context5.prev = _context5.next) {
+                        switch (_context6.prev = _context6.next) {
                             case 0:
-                                _context5.next = 2;
+                                _context6.next = 2;
                                 return this.withBody('put', url, body, options);
 
                             case 2:
-                                return _context5.abrupt('return', _context5.sent);
+                                return _context6.abrupt('return', _context6.sent);
 
                             case 3:
                             case 'end':
-                                return _context5.stop();
+                                return _context6.stop();
                         }
                     }
-                }, _callee5, this);
+                }, _callee6, this);
             }));
 
-            function put(_x19, _x20, _x21) {
+            function put(_x28, _x29, _x30) {
                 return ref.apply(this, arguments);
             }
 
@@ -262,26 +314,26 @@ var HttpClient = function () {
     }, {
         key: 'patch',
         value: function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee6(url, body, options) {
-                return regeneratorRuntime.wrap(function _callee6$(_context6) {
+            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee7(url, body, options) {
+                return regeneratorRuntime.wrap(function _callee7$(_context7) {
                     while (1) {
-                        switch (_context6.prev = _context6.next) {
+                        switch (_context7.prev = _context7.next) {
                             case 0:
-                                _context6.next = 2;
+                                _context7.next = 2;
                                 return this.withBody('patch', url, body, options);
 
                             case 2:
-                                return _context6.abrupt('return', _context6.sent);
+                                return _context7.abrupt('return', _context7.sent);
 
                             case 3:
                             case 'end':
-                                return _context6.stop();
+                                return _context7.stop();
                         }
                     }
-                }, _callee6, this);
+                }, _callee7, this);
             }));
 
-            function patch(_x22, _x23, _x24) {
+            function patch(_x31, _x32, _x33) {
                 return ref.apply(this, arguments);
             }
 
@@ -298,29 +350,29 @@ var HttpClient = function () {
     }, {
         key: 'delete',
         value: function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee7(url) {
+            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee8(url) {
                 var query = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
                 var options = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-                return regeneratorRuntime.wrap(function _callee7$(_context7) {
+                return regeneratorRuntime.wrap(function _callee8$(_context8) {
                     while (1) {
-                        switch (_context7.prev = _context7.next) {
+                        switch (_context8.prev = _context8.next) {
                             case 0:
                                 options.qs = query;
-                                _context7.next = 3;
+                                _context8.next = 3;
                                 return this.common('delete', url, null, options);
 
                             case 3:
-                                return _context7.abrupt('return', _context7.sent);
+                                return _context8.abrupt('return', _context8.sent);
 
                             case 4:
                             case 'end':
-                                return _context7.stop();
+                                return _context8.stop();
                         }
                     }
-                }, _callee7, this);
+                }, _callee8, this);
             }));
 
-            function _delete(_x25, _x26, _x27) {
+            function _delete(_x34, _x35, _x36) {
                 return ref.apply(this, arguments);
             }
 

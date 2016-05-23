@@ -24,3 +24,10 @@ test('3', async (t) => {
         { body } = await client.post('http://posttestserver.com/post.php?dump', { hihi: 'haha' }, { headers });
     t.true(body.indexOf(`${pkg.name}/${pkg.version}`) >= 0);
 });
+
+test('4', async (t) => {
+    const client = new HttpClient(),
+        headers = {},
+        { body } = await client.exec('http://posttestserver.com/post.php?dump', { hihi: 'haha' }, { hoho: 'hehe' }, { headers }, 'post');
+    t.true(body.indexOf(`${pkg.name}/${pkg.version}`) >= 0);
+});
