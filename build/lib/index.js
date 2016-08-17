@@ -55,7 +55,7 @@ var HttpClient = function () {
     _createClass(HttpClient, [{
         key: 'common',
         value: function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(method, url, body, options) {
+            var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(method, url, body, options) {
                 var _this = this;
 
                 return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -92,7 +92,7 @@ var HttpClient = function () {
             }));
 
             function common(_x, _x2, _x3, _x4) {
-                return ref.apply(this, arguments);
+                return _ref.apply(this, arguments);
             }
 
             return common;
@@ -105,7 +105,7 @@ var HttpClient = function () {
     }, {
         key: 'withBody',
         value: function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(method, url) {
+            var _ref2 = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(method, url) {
                 var body = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
                 var options = arguments.length <= 3 || arguments[3] === undefined ? { headers: {}, json: true } : arguments[3];
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
@@ -135,7 +135,7 @@ var HttpClient = function () {
             }));
 
             function withBody(_x5, _x6, _x7, _x8) {
-                return ref.apply(this, arguments);
+                return _ref2.apply(this, arguments);
             }
 
             return withBody;
@@ -148,7 +148,7 @@ var HttpClient = function () {
     }, {
         key: 'exec',
         value: function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee3(url) {
+            var _ref3 = _asyncToGenerator(regeneratorRuntime.mark(function _callee3(url) {
                 var body = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
                 var query = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
                 var options = arguments.length <= 3 || arguments[3] === undefined ? { headers: {}, json: true } : arguments[3];
@@ -187,7 +187,7 @@ var HttpClient = function () {
             }));
 
             function exec(_x11, _x12, _x13, _x14, _x15) {
-                return ref.apply(this, arguments);
+                return _ref3.apply(this, arguments);
             }
 
             return exec;
@@ -203,7 +203,7 @@ var HttpClient = function () {
     }, {
         key: 'get',
         value: function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee4(url) {
+            var _ref4 = _asyncToGenerator(regeneratorRuntime.mark(function _callee4(url) {
                 var query = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
                 var options = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
                 return regeneratorRuntime.wrap(function _callee4$(_context4) {
@@ -226,7 +226,7 @@ var HttpClient = function () {
             }));
 
             function get(_x20, _x21, _x22) {
-                return ref.apply(this, arguments);
+                return _ref4.apply(this, arguments);
             }
 
             return get;
@@ -242,7 +242,7 @@ var HttpClient = function () {
     }, {
         key: 'post',
         value: function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee5(url, body, options) {
+            var _ref5 = _asyncToGenerator(regeneratorRuntime.mark(function _callee5(url, body, options) {
                 return regeneratorRuntime.wrap(function _callee5$(_context5) {
                     while (1) {
                         switch (_context5.prev = _context5.next) {
@@ -262,7 +262,7 @@ var HttpClient = function () {
             }));
 
             function post(_x25, _x26, _x27) {
-                return ref.apply(this, arguments);
+                return _ref5.apply(this, arguments);
             }
 
             return post;
@@ -278,7 +278,7 @@ var HttpClient = function () {
     }, {
         key: 'put',
         value: function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee6(url, body, options) {
+            var _ref6 = _asyncToGenerator(regeneratorRuntime.mark(function _callee6(url, body, options) {
                 return regeneratorRuntime.wrap(function _callee6$(_context6) {
                     while (1) {
                         switch (_context6.prev = _context6.next) {
@@ -298,7 +298,7 @@ var HttpClient = function () {
             }));
 
             function put(_x28, _x29, _x30) {
-                return ref.apply(this, arguments);
+                return _ref6.apply(this, arguments);
             }
 
             return put;
@@ -314,7 +314,7 @@ var HttpClient = function () {
     }, {
         key: 'patch',
         value: function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee7(url, body, options) {
+            var _ref7 = _asyncToGenerator(regeneratorRuntime.mark(function _callee7(url, body, options) {
                 return regeneratorRuntime.wrap(function _callee7$(_context7) {
                     while (1) {
                         switch (_context7.prev = _context7.next) {
@@ -334,7 +334,7 @@ var HttpClient = function () {
             }));
 
             function patch(_x31, _x32, _x33) {
-                return ref.apply(this, arguments);
+                return _ref7.apply(this, arguments);
             }
 
             return patch;
@@ -350,7 +350,7 @@ var HttpClient = function () {
     }, {
         key: 'delete',
         value: function () {
-            var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee8(url) {
+            var _ref8 = _asyncToGenerator(regeneratorRuntime.mark(function _callee8(url) {
                 var query = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
                 var options = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
                 return regeneratorRuntime.wrap(function _callee8$(_context8) {
@@ -373,7 +373,7 @@ var HttpClient = function () {
             }));
 
             function _delete(_x34, _x35, _x36) {
-                return ref.apply(this, arguments);
+                return _ref8.apply(this, arguments);
             }
 
             return _delete;
