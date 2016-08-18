@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "babel-regenerator-runtime": "^6.5.0",
-    "flashheart": "github:diorahman/flashheart#v2.3.0-1",
+    "flashheart": "github:diorahman/flashheart#v2.3.0-2",
     "source-map-support": "^0.4.0"
   },
   "devDependencies": {
