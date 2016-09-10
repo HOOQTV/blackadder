@@ -1,6 +1,6 @@
 {
   "name": "blackadder",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Async flashheart",
   "main": "build/lib/index.js",
   "scripts": {
