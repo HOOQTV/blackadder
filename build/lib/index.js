@@ -13,7 +13,7 @@ var _flashheart2 = _interopRequireDefault(_flashheart);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { return step("next", value); }, function (err) { return step("throw", err); }); } } return step("next"); }); }; }
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -29,7 +29,7 @@ var HttpClient = function () {
 
         this.options = {
             name: '' + pkg.name,
-            timeout: 5000,
+            timeout: process.env.BLACKADDER_TIMEOUT || 60000, // default to 1m
             userAgent: pkg.name + '/' + pkg.version,
             defaults: {
                 json: true
@@ -102,8 +102,8 @@ var HttpClient = function () {
         key: 'withBody',
         value: function () {
             var _ref2 = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(method, url) {
-                var body = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-                var options = arguments.length <= 3 || arguments[3] === undefined ? { headers: {}, json: true } : arguments[3];
+                var body = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+                var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : { headers: {}, json: true };
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
                         switch (_context2.prev = _context2.next) {
@@ -145,10 +145,10 @@ var HttpClient = function () {
         key: 'exec',
         value: function () {
             var _ref3 = _asyncToGenerator(regeneratorRuntime.mark(function _callee3(url) {
-                var body = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-                var query = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
-                var options = arguments.length <= 3 || arguments[3] === undefined ? { headers: {}, json: true } : arguments[3];
-                var method = arguments.length <= 4 || arguments[4] === undefined ? 'get' : arguments[4];
+                var body = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+                var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+                var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : { headers: {}, json: true };
+                var method = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : 'get';
                 return regeneratorRuntime.wrap(function _callee3$(_context3) {
                     while (1) {
                         switch (_context3.prev = _context3.next) {
@@ -200,8 +200,8 @@ var HttpClient = function () {
         key: 'get',
         value: function () {
             var _ref4 = _asyncToGenerator(regeneratorRuntime.mark(function _callee4(url) {
-                var query = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-                var options = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+                var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+                var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
                 return regeneratorRuntime.wrap(function _callee4$(_context4) {
                     while (1) {
                         switch (_context4.prev = _context4.next) {
@@ -347,8 +347,8 @@ var HttpClient = function () {
         key: 'delete',
         value: function () {
             var _ref8 = _asyncToGenerator(regeneratorRuntime.mark(function _callee8(url) {
-                var query = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-                var options = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+                var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+                var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
                 return regeneratorRuntime.wrap(function _callee8$(_context8) {
                     while (1) {
                         switch (_context8.prev = _context8.next) {
