@@ -33,8 +33,7 @@ var HttpClient = function () {
             userAgent: pkg.name + '/' + pkg.version,
             defaults: {
                 json: true
-            },
-            retries: 0 // fix for multiple call to third-party notification service (email/sms)
+            }
         };
         this.options = Object.assign(this.options, options);
         this.client = _flashheart2.default.createClient(this.options);
