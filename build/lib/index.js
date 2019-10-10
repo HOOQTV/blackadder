@@ -33,7 +33,8 @@ var HttpClient = function () {
             userAgent: pkg.name + '/' + pkg.version,
             defaults: {
                 json: true
-            }
+            },
+            retries: 0 // fix for multiple call to third-party notification service (email/sms)
         };
         this.options = Object.assign(this.options, options);
         this.client = _flashheart2.default.createClient(this.options);
@@ -51,7 +52,7 @@ var HttpClient = function () {
     _createClass(HttpClient, [{
         key: 'common',
         value: function () {
-            var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(method, url, body, options) {
+            var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(method, url, body, options) {
                 var _this = this;
 
                 return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -101,7 +102,7 @@ var HttpClient = function () {
     }, {
         key: 'withBody',
         value: function () {
-            var _ref2 = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(method, url) {
+            var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(method, url) {
                 var body = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
                 var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : { headers: {}, json: true };
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
@@ -130,7 +131,7 @@ var HttpClient = function () {
                 }, _callee2, this);
             }));
 
-            function withBody(_x5, _x6, _x7, _x8) {
+            function withBody(_x5, _x6) {
                 return _ref2.apply(this, arguments);
             }
 
@@ -144,7 +145,7 @@ var HttpClient = function () {
     }, {
         key: 'exec',
         value: function () {
-            var _ref3 = _asyncToGenerator(regeneratorRuntime.mark(function _callee3(url) {
+            var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(url) {
                 var body = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
                 var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
                 var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : { headers: {}, json: true };
@@ -182,7 +183,7 @@ var HttpClient = function () {
                 }, _callee3, this);
             }));
 
-            function exec(_x11, _x12, _x13, _x14, _x15) {
+            function exec(_x9) {
                 return _ref3.apply(this, arguments);
             }
 
@@ -199,7 +200,7 @@ var HttpClient = function () {
     }, {
         key: 'get',
         value: function () {
-            var _ref4 = _asyncToGenerator(regeneratorRuntime.mark(function _callee4(url) {
+            var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(url) {
                 var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
                 var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
                 return regeneratorRuntime.wrap(function _callee4$(_context4) {
@@ -221,7 +222,7 @@ var HttpClient = function () {
                 }, _callee4, this);
             }));
 
-            function get(_x20, _x21, _x22) {
+            function get(_x14) {
                 return _ref4.apply(this, arguments);
             }
 
@@ -238,7 +239,7 @@ var HttpClient = function () {
     }, {
         key: 'post',
         value: function () {
-            var _ref5 = _asyncToGenerator(regeneratorRuntime.mark(function _callee5(url, body, options) {
+            var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(url, body, options) {
                 return regeneratorRuntime.wrap(function _callee5$(_context5) {
                     while (1) {
                         switch (_context5.prev = _context5.next) {
@@ -257,7 +258,7 @@ var HttpClient = function () {
                 }, _callee5, this);
             }));
 
-            function post(_x25, _x26, _x27) {
+            function post(_x17, _x18, _x19) {
                 return _ref5.apply(this, arguments);
             }
 
@@ -274,7 +275,7 @@ var HttpClient = function () {
     }, {
         key: 'put',
         value: function () {
-            var _ref6 = _asyncToGenerator(regeneratorRuntime.mark(function _callee6(url, body, options) {
+            var _ref6 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6(url, body, options) {
                 return regeneratorRuntime.wrap(function _callee6$(_context6) {
                     while (1) {
                         switch (_context6.prev = _context6.next) {
@@ -293,7 +294,7 @@ var HttpClient = function () {
                 }, _callee6, this);
             }));
 
-            function put(_x28, _x29, _x30) {
+            function put(_x20, _x21, _x22) {
                 return _ref6.apply(this, arguments);
             }
 
@@ -310,7 +311,7 @@ var HttpClient = function () {
     }, {
         key: 'patch',
         value: function () {
-            var _ref7 = _asyncToGenerator(regeneratorRuntime.mark(function _callee7(url, body, options) {
+            var _ref7 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7(url, body, options) {
                 return regeneratorRuntime.wrap(function _callee7$(_context7) {
                     while (1) {
                         switch (_context7.prev = _context7.next) {
@@ -329,7 +330,7 @@ var HttpClient = function () {
                 }, _callee7, this);
             }));
 
-            function patch(_x31, _x32, _x33) {
+            function patch(_x23, _x24, _x25) {
                 return _ref7.apply(this, arguments);
             }
 
@@ -346,7 +347,7 @@ var HttpClient = function () {
     }, {
         key: 'delete',
         value: function () {
-            var _ref8 = _asyncToGenerator(regeneratorRuntime.mark(function _callee8(url) {
+            var _ref8 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8(url) {
                 var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
                 var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
                 return regeneratorRuntime.wrap(function _callee8$(_context8) {
@@ -368,7 +369,7 @@ var HttpClient = function () {
                 }, _callee8, this);
             }));
 
-            function _delete(_x34, _x35, _x36) {
+            function _delete(_x26) {
                 return _ref8.apply(this, arguments);
             }
 
