@@ -1,5 +1,7 @@
 ## Blackadder
 
+**Migrated to https://github.coupang.net/coupang/couplay-blackadder**
+
 Async [Flashheart](https://www.npmjs.com/package/flashheart)
 
 ## API
